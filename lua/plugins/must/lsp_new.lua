@@ -15,7 +15,8 @@ local handlers        = {
 	end,
 }
 
-local LSP_USE_HANDLER = true
+-- local LSP_USE_HANDLER = true
+local LSP_USE_HANDLER = false
 return {
 	{
 		"williamboman/mason-lspconfig.nvim",
