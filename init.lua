@@ -13,13 +13,5 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 require("lazy").setup({
 	{ import = "plugins.must" },
-	-- { import = "autoload_plugins.should" },
-	-- { import = "autoload_plugins.rest" },
 })
 require('configs')
--- require('configs.must')
--- require('configs.should')
--- require('configs.rest')
--- require('configs.load_all_filetype')
--- require('configs.might_break_things')
--- require('extra')
