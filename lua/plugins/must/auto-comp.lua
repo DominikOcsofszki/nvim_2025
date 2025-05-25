@@ -34,13 +34,13 @@ return {
 					['<c-p>'] = cmp.mapping.select_prev_item(),
 					['<c-y>'] = cmp.mapping.confirm({ select = true }),
 					['<c-j>'] = cmp.mapping.confirm({ select = true }),
-					["<c-a>"] = cmp.mapping(function(fallback)
-						if luasnip.expand_or_locally_jumpable() then
-							luasnip.expand_or_jump()
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
+					-- ["<c-a>"] = cmp.mapping(function(fallback)
+					-- 	if luasnip.expand_or_locally_jumpable() then
+					-- 		luasnip.expand_or_jump()
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end, { "i", "s" }),
 					-- ["<S-Tab>"] = cmp.mapping(function(fallback)
 					-- 	if luasnip.locally_jumpable(-1) then
 					-- 		luasnip.jump(-1)
@@ -48,6 +48,13 @@ return {
 					-- 		fallback()
 					-- 	end
 					-- end, { "i", "s" }),
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if luasnip.locally_jumpable(1) then
+							luasnip.jump(1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 
 				}),
 				sources = cmp.config.sources({
